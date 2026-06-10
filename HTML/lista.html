@@ -20,11 +20,14 @@
 (function() {
     const usuario = JSON.parse(sessionStorage.getItem('usuario') || 'null');
     const el = document.getElementById('navbar-auth');
+    const carrinhoIcon = `<a href="Carrinho.html" class="btn btn-outline-secondary btn-sm me-2 position-relative" title="Carrinho">
+        🛒 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cart-badge" style="display:none;">0</span>
+    </a>`;
     if (usuario) {
-        el.innerHTML = `<span class="navbar-text me-2">${usuario.email} (${usuario.tipo})</span>
+        el.innerHTML = `${carrinhoIcon}<span class="navbar-text me-2">${usuario.email} (${usuario.tipo})</span>
             <button class="btn btn-outline-danger btn-sm" onclick="sessionStorage.removeItem('usuario');location.reload()">Sair</button>`;
     } else {
-        el.innerHTML = '<a href="Login.html" class="btn btn-outline-primary btn-sm">Entrar</a>';
+        el.innerHTML = `${carrinhoIcon}<a href="Login.html" class="btn btn-outline-primary btn-sm">Entrar</a>`;
     }
 })();
 </script>
