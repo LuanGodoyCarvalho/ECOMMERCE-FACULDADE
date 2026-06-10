@@ -1,0 +1,26 @@
+.carrinho-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.carrinho-img-placeholder {
+    width: 80px;
+    height: 80px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #999;
+}
+
+#carrinho-itens .card {
+    transition: box-shadow 0.2s;
+}
+
+#carrinho-itens .card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
