@@ -1,0 +1,51 @@
+
+
+#img-cabecario {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+#btn-salvar-cadastro {
+    margin-top: 20px;
+}
+
+.drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+    margin-top: 10px;
+}
+
+.drop-area:hover {
+    border-color: #007bff;
+    background-color: #e3f2fd;
+}
+
+.drop-area.drag-over {
+    border-color: #28a745;
+    background-color: #d4edda;
+    transform: scale(1.02);
+}
+
+.drop-area p {
+    margin: 0;
+    color: #666;
+    font-size: 14px;
+}
+#Preço {
+    margin-top: 10px;
+}
+#imagem-produto {
+    margin-top: 10px;
+}
+#imagem-produto {
+    width: 100px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}

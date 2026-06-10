@@ -1,0 +1,23 @@
+body {
+    background-color: #f0f2f5;
+}
+
+.login-wrapper {
+    min-height: calc(100vh - 56px);
+    padding: 2rem 1rem;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+}
+
+.nav-tabs .nav-link {
+    color: #555;
+}
+
+.nav-tabs .nav-link.active {
+    font-weight: 600;
+    color: #198754;
+}

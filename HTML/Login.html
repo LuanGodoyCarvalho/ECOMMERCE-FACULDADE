@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="../CSS/Login.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="PaginaInicial.html">Inicio</a>
+    </div>
+</nav>
+
+<div class="login-wrapper d-flex justify-content-center align-items-center">
+    <div class="login-card card shadow-sm p-4">
+
+        <!-- Abas -->
+        <ul class="nav nav-tabs mb-4" id="auth-tabs">
+            <li class="nav-item">
+                <button class="nav-link active" id="tab-login" onclick="mostrarAba('login')">Entrar</button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" id="tab-cadastro" onclick="mostrarAba('cadastro')">Criar conta</button>
+            </li>
+        </ul>
+
+        <div id="mensagem-alerta" class="alert d-none" role="alert"></div>
+
+        <!-- Formulário de Login -->
+        <div id="form-login">
+            <h5 class="card-title mb-3">Bem-vindo de volta</h5>
+            <div class="mb-3">
+                <label for="login-email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="login-email" placeholder="seu@email.com" autocomplete="email">
+            </div>
+            <div class="mb-3">
+                <label for="login-senha" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="login-senha" placeholder="Sua senha" autocomplete="current-password">
+            </div>
+            <button class="btn btn-success w-100" onclick="fazerLogin()">Entrar</button>
+        </div>
+
+        <!-- Formulário de Cadastro -->
+        <div id="form-cadastro" class="d-none">
+            <h5 class="card-title mb-3">Criar nova conta</h5>
+            <div class="mb-3">
+                <label for="cad-email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="cad-email" placeholder="seu@email.com" autocomplete="email">
+            </div>
+            <div class="mb-3">
+                <label for="cad-senha" class="form-label">Senha</label>
+                <input type="password" class="form-control" id="cad-senha" placeholder="Crie uma senha" autocomplete="new-password">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tipo de conta</label>
+                <div class="d-flex gap-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tipo-usuario" id="tipo-cliente" value="cliente" checked>
+                        <label class="form-check-label" for="tipo-cliente">Cliente</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tipo-usuario" id="tipo-vendedor" value="vendedor">
+                        <label class="form-check-label" for="tipo-vendedor">Vendedor</label>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary w-100" onclick="fazerCadastro()">Cadastrar</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+<script src="../JavaScript/Login.js"></script>
+</body>
+</html>

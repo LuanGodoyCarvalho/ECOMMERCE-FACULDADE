@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Loja foda</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Links Úteis
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" id="link-cadastro" href="Cadastro.html">Cadastro de produtos</a></li>
+            <li><a class="dropdown-item" href="lista.html">Lista de produtos</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="Sobrenós.html">Sobre nós</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+      <div class="d-flex align-items-center ms-3" id="navbar-auth">
+        <!-- preenchido pelo JS -->
+      </div>
+    </div>
+  </div>
+</nav>
+<script>
+(function() {
+    const usuario = JSON.parse(sessionStorage.getItem('usuario') || 'null');
+    const navbarAuth  = document.getElementById('navbar-auth');
+    const linkCadastro = document.getElementById('link-cadastro');
+
+    if (usuario) {
+        navbarAuth.innerHTML = `
+            <span class="navbar-text me-2">Olá, <strong>${usuario.email}</strong> (${usuario.tipo})</span>
+            <button class="btn btn-outline-danger btn-sm" onclick="logout()">Sair</button>`;
+        if (usuario.tipo !== 'vendedor') {
+            linkCadastro.parentElement.style.display = 'none';
+        }
+    } else {
+        navbarAuth.innerHTML = '<a href="Login.html" class="btn btn-outline-primary btn-sm">Entrar</a>';
+        linkCadastro.parentElement.style.display = 'none';
+    }
+
+    window.logout = function() {
+        sessionStorage.removeItem('usuario');
+        window.location.reload();
+    };
+})();
+</script>
+</body>
+</html>
